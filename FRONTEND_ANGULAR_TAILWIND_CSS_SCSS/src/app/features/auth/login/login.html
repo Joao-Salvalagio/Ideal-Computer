@@ -1,0 +1,54 @@
+<div class="flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-dark-card border border-dark-border rounded-2xl p-8 w-full max-w-md shadow-2xl relative overflow-hidden">
+
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-400"></div>
+
+    <div class="text-center mb-8 mt-2">
+      <h2 class="text-3xl font-bold text-white mb-2">Ideal Computer</h2>
+      <p class="text-gray-400 text-sm">Acesse sua conta para montar o seu setup ideal.</p>
+    </div>
+
+    <form class="space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div>
+        <label class="block text-gray-300 text-sm font-medium mb-2" for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="w-full bg-dark-bg border border-dark-border text-white rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+          placeholder="seu@email.com"
+        >
+      </div>
+
+      <div>
+        <label class="block text-gray-300 text-sm font-medium mb-2" for="password">Senha</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="w-full bg-dark-bg border border-dark-border text-white rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+          placeholder="••••••••"
+        >
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="w-full bg-primary hover:bg-purple-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-lg px-4 py-3 mt-4 transition-all duration-300 shadow-[0_0_15px_rgba(139,92,246,0.2)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
+      >
+        Entrar no Sistema
+      </button>
+
+    </form>
+
+    <div class="mt-8 text-center">
+      <p class="text-gray-400 text-sm">
+        Ainda não tem uma conta?
+        <a routerLink="/register" class="text-primary hover:text-purple-400 font-medium transition-colors cursor-pointer">Cadastre-se</a>
+      </p>
+    </div>
+
+  </div>
+</div>
